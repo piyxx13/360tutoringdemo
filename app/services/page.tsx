@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import CountUp from "./CountUp";
 
 export const metadata = {
   title: "Services — 360 Tutoring",
@@ -41,15 +42,12 @@ export default function ServicesPage() {
 
       <section className="bg-[#F5C518] py-20">
         <div className="mx-auto max-w-5xl text-center text-[#1E3A5F]">
-          <div className="relative inline-block">
-            <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.4),transparent_60%)]" />
-            <h2 className="relative text-8xl font-black">100%</h2>
-          </div>
+          <CountUp />
           <h3 className="mt-6 text-2xl font-black">Commitment to Your Success</h3>
           <p className="mt-4 mx-auto max-w-2xl text-lg text-[#1E3A5F]/80">We invest in every student with personalized planning, onboarding metrics, and regular progress updates to ensure the best outcomes.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link href="/contact-us" className="btn-pill inline-flex rounded-full bg-[#0F172A] px-8 py-3 font-bold text-[#F5C518]">Get Started</Link>
-            <Link href="/about-us" className="btn-pill inline-flex rounded-full border border-[#0F172A] bg-white px-8 py-3 font-bold text-[#1E3A5F]">Learn More</Link>
+            <Link href="/contact-us" className="btn-pill inline-flex rounded-full bg-[#1E3A5F] px-8 py-3 font-bold text-[#F5C518]">Get Started</Link>
+            <Link href="/about-us" className="btn-pill inline-flex rounded-full border-none bg-[#F5C518] px-8 py-3 font-bold text-[#1E3A5F]">Learn More</Link>
           </div>
         </div>
       </section>

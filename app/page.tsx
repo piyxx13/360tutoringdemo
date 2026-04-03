@@ -258,8 +258,8 @@ export default function Home() {
         style={{ backgroundColor: '#1E3A5F' }}>
         <motion.div {...cardMotion}>
           <div className="max-w-2xl mx-auto flex flex-col items-center gap-6">
-            <h2 className="text-5xl font-black">Ready to Start Learning?</h2>
-            <p className="text-lg text-white/80">Speak with our tutors and get a customized learning plan today.</p>
+            <h2 className="text-5xl font-black text-[#F5C518]" style={{ color: '#F5C518' }}>Ready to Start Learning?</h2>
+            <p className="text-lg text-white/80" style={{ color: 'rgba(255,255,255,0.8)' }}>Speak with our tutors and get a customized learning plan today.</p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact-us" className="rounded-full bg-[#F5C518] px-8 py-3 font-bold text-[#1E3A5F]">Get Started</Link>
