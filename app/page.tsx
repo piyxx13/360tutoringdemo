@@ -1,6 +1,7 @@
 "use client";
 
 // LAYOUT UPDATED FOR AWAKE LIGHT THEME
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -15,6 +16,7 @@ const cardMotion = {
 };
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState('Elementary');
 
   return (
     <div className="bg-white text-[#1E3A5F]">
@@ -39,6 +41,83 @@ export default function Home() {
           </div>
 
         </motion.div>
+
+        {/* Academic Levels Tab — inside hero */}
+        <div className="mt-16 w-full max-w-4xl mx-auto px-4">
+
+          <p className="text-center text-xs font-semibold uppercase tracking-widest text-[#64748B] mb-6">
+            Our Team of Expert Tutors Can Help
+          </p>
+
+          <div className="flex justify-center gap-3 flex-wrap mb-8">
+            {['Elementary', 'High School', 'College / CEGEP', 'University'].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+                  activeTab === tab
+                    ? 'bg-[#1E3A5F] text-white shadow-md'
+                    : 'bg-gray-100 text-[#64748B] hover:bg-gray-200'
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          <div className="bg-white border border-gray-100 rounded-2xl shadow-sm p-8 text-left min-h-[180px]">
+
+            {activeTab === 'Elementary' && (
+              <div>
+                <h3 className="text-xl font-black text-[#1E3A5F] mb-2">Building Brilliance Early</h3>
+                <p className="text-[#64748B] text-sm mb-4">We help young learners master core academic subjects through engaging, personalized tutoring. From foundational math and reading to early science and social studies, we focus on building confidence and sparking curiosity every step of the way.</p>
+                <div className="flex flex-wrap gap-2">
+                  {['Math', 'Reading', 'Science', 'Social Studies', 'English', 'French'].map(s => (
+                    <span key={s} className="bg-[#F5C518]/10 text-[#1E3A5F] border border-[#F5C518]/30 rounded-full px-3 py-1 text-xs font-medium">{s}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'High School' && (
+              <div>
+                <h3 className="text-xl font-black text-[#1E3A5F] mb-2">Preparing for What&apos;s Next</h3>
+                <p className="text-[#64748B] text-sm mb-4">We support high school students through their most challenging years with subject-specific tutoring, test prep, and study strategies that build both grades and confidence.</p>
+                <div className="flex flex-wrap gap-2">
+                  {['Mathematics', 'Physics', 'Chemistry', 'Biology', 'French', 'English', 'History', 'Computer Science'].map(s => (
+                    <span key={s} className="bg-[#F5C518]/10 text-[#1E3A5F] border border-[#F5C518]/30 rounded-full px-3 py-1 text-xs font-medium">{s}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'College / CEGEP' && (
+              <div>
+                <h3 className="text-xl font-black text-[#1E3A5F] mb-2">Conquering College Level</h3>
+                <p className="text-[#64748B] text-sm mb-4">Our CEGEP and college tutors are subject specialists who understand the jump in difficulty and help students adapt quickly with targeted, efficient sessions.</p>
+                <div className="flex flex-wrap gap-2">
+                  {['Calculus', 'Linear Algebra', 'Physics', 'Chemistry', 'Biology', 'Physiology', 'Computer Science', 'EUF Prep', 'Statistics'].map(s => (
+                    <span key={s} className="bg-[#F5C518]/10 text-[#1E3A5F] border border-[#F5C518]/30 rounded-full px-3 py-1 text-xs font-medium">{s}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'University' && (
+              <div>
+                <h3 className="text-xl font-black text-[#1E3A5F] mb-2">Excellence at University Level</h3>
+                <p className="text-[#64748B] text-sm mb-4">We provide university-level tutoring across STEM and science programs, matching students with tutors who have advanced credentials in the exact subject they need.</p>
+                <div className="flex flex-wrap gap-2">
+                  {['Mathematics', 'Physics', 'Chemistry', 'Biology', 'Physiology', 'Computer Science', 'Software Engineering', 'Statistics', 'Mechanics'].map(s => (
+                    <span key={s} className="bg-[#F5C518]/10 text-[#1E3A5F] border border-[#F5C518]/30 rounded-full px-3 py-1 text-xs font-medium">{s}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+          </div>
+        </div>
+
       </section>
 
       <StatsSection />
